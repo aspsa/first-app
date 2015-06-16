@@ -1,0 +1,7 @@
+Option #01: Using the '-n' switch to fetch 'n' number of files. Note, for example, executing 'heroku -n 4' from a Cloud9 Terminal returns 'n+1' log entries.
+2015-06-16T18:03:14.336710+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:03:14.337756+00:00 app[web.1]: Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+2015-06-16T18:03:12.809844+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=5617241f-ac37-4a1a-9717-33bf901111b8 fwd="67.84.70.95" dyno=web.1 connect=3ms service=14ms status=304 bytes=397
+2015-06-16T18:03:12.982504+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=limitless-sands-7127.herokuapp.com request_id=ff05adfa-bce5-4432-8e98-2544a49ba5b4 fwd="67.84.70.95" dyno=web.1 connect=0ms service=5ms status=304 bytes=133
+2015-06-16T18:03:14.338955+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=7fe05bfc-f5bf-48a0-8ccd-f8641df8c7a4 fwd="67.84.70.95" dyno=web.1 connect=1ms service=35ms status=200 bytes=569
+Option #02: Using the '--tail' switch to display a Heroku log and keep it open for real-time logging. To test this I created a meangingless file ('dummy.txt'). After committing it to the local repository, I pushed it to Heroku. The open Heroku log file updated to reveal the push.
