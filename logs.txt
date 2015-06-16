@@ -1,7 +1,327 @@
 Option #01: Using the '-n' switch to fetch 'n' number of files. Note, for example, executing 'heroku -n 4' from a Cloud9 Terminal returns 'n+1' log entries.
+2015-06-16T19:11:25.342722+00:00 app[web.1]: Exiting
+2015-06-16T19:11:25.342424+00:00 app[web.1]: 	bin/rails:8:in `require'
+2015-06-16T19:11:25.342425+00:00 app[web.1]: 	bin/rails:8:in `<main>'
+2015-06-16T19:11:25.342629+00:00 app[web.1]: [2015-06-16 19:11:25] INFO  WEBrick::HTTPServer#start done.
+2015-06-16T19:11:26.676110+00:00 heroku[web.1]: Process exited with status 143
+Option #02: Using the '--tail' switch to display a Heroku log and keep it open for real-time logging and then quit 'heroku logs' by invoking <CTRL>-c
+Usage: heroku logs
+
+ display recent log output
+
+ -n, --num NUM        # the number of lines to display
+ -p, --ps PS          # only display logs from the given process
+ -s, --source SOURCE  # only display logs from the given source
+ -t, --tail           # continually stream logs
+ --force-colors       # Force use of ANSI color characters (even on non-tty outputs)
+
+Example:
+
+ $ heroku logs
+ 2012-01-01T12:00:00+00:00 heroku[api]: Config add EXAMPLE by email@example.com
+ 2012-01-01T12:00:01+00:00 heroku[api]: Release v1 created by email@example.com
+
+2015-06-16T17:52:56.813260+00:00 app[web.1]:   Rendered text template (0.1ms)
+2015-06-16T17:52:56.821154+00:00 heroku[router]: at=info method=GET path="/?_c9_id=livepreview2&_c9_host=https://ide.c9.io" host=limitless-sands-7127.herokuapp.com request_id=798c5fa4-dcd4-4801-9af3-e0582a9993d7 fwd="67.84.70.95" dyno=web.1 connect=1ms service=82ms status=200 bytes=480
+2015-06-16T17:52:56.814517+00:00 app[web.1]: Completed 200 OK in 12ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:14.242066+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=2aa70d2c-12e3-4898-a56f-2bf8015f64d1 fwd="67.84.70.95" dyno=web.1 connect=1ms service=19ms status=304 bytes=397
+2015-06-16T17:54:14.234271+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 17:54:14 +0000
+2015-06-16T17:54:14.238918+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T17:54:14.239634+00:00 app[web.1]: Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:14.239447+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T17:54:14.435474+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=limitless-sands-7127.herokuapp.com request_id=875659f2-8c8a-4e92-a90a-0ee65df2ff1a fwd="67.84.70.95" dyno=web.1 connect=1ms service=12ms status=200 bytes=228
+2015-06-16T17:54:15.703436+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=9ac70d8d-cab1-4ad2-8e44-e02162e162c6 fwd="67.84.70.95" dyno=web.1 connect=1ms service=36ms status=200 bytes=569
+2015-06-16T17:54:15.563675+00:00 app[web.1]: Started HEAD "/" for 67.84.70.95 at 2015-06-16 17:54:15 +0000
+2015-06-16T17:54:15.581057+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T17:54:15.670377+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 17:54:15 +0000
+2015-06-16T17:54:15.673830+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T17:54:15.582754+00:00 app[web.1]: Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:15.672715+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T17:54:15.688056+00:00 app[web.1]: Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:15.580304+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T17:54:15.586635+00:00 heroku[router]: at=info method=HEAD path="/" host=limitless-sands-7127.herokuapp.com request_id=2b43b5e2-576c-41fa-bcae-457211de5fdb fwd="67.84.70.95" dyno=web.1 connect=1ms service=28ms status=200 bytes=487
+2015-06-16T18:03:12.802401+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 18:03:12 +0000
+2015-06-16T18:03:12.807790+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:03:12.807068+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:03:12.807961+00:00 app[web.1]: Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+2015-06-16T18:03:14.220385+00:00 heroku[router]: at=info method=HEAD path="/" host=limitless-sands-7127.herokuapp.com request_id=f23b284a-2bb9-43f3-829b-3158c9e61209 fwd="67.84.70.95" dyno=web.1 connect=0ms service=27ms status=200 bytes=487
+2015-06-16T18:03:14.203431+00:00 app[web.1]: Started HEAD "/" for 67.84.70.95 at 2015-06-16 18:03:14 +0000
+2015-06-16T18:03:14.213408+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:03:14.315326+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 18:03:14 +0000
+2015-06-16T18:03:14.337491+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:03:14.206978+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:03:14.215540+00:00 app[web.1]: Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
 2015-06-16T18:03:14.336710+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
 2015-06-16T18:03:14.337756+00:00 app[web.1]: Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
 2015-06-16T18:03:12.809844+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=5617241f-ac37-4a1a-9717-33bf901111b8 fwd="67.84.70.95" dyno=web.1 connect=3ms service=14ms status=304 bytes=397
 2015-06-16T18:03:12.982504+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=limitless-sands-7127.herokuapp.com request_id=ff05adfa-bce5-4432-8e98-2544a49ba5b4 fwd="67.84.70.95" dyno=web.1 connect=0ms service=5ms status=304 bytes=133
 2015-06-16T18:03:14.338955+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=7fe05bfc-f5bf-48a0-8ccd-f8641df8c7a4 fwd="67.84.70.95" dyno=web.1 connect=1ms service=35ms status=200 bytes=569
-Option #02: Using the '--tail' switch to display a Heroku log and keep it open for real-time logging. To test this I created a meangingless file ('dummy.txt'). After committing it to the local repository, I pushed it to Heroku. The open Heroku log file updated to reveal the push.
+2015-06-16T18:36:39.874394+00:00 heroku[slug-compiler]: Slug compilation started
+2015-06-16T18:36:39.874443+00:00 heroku[slug-compiler]: Slug compilation finished
+2015-06-16T18:36:39.827433+00:00 heroku[api]: Deploy cd8b16a by 123aspsa123@gmail.com
+2015-06-16T18:36:39.827488+00:00 heroku[api]: Release v6 created by 123aspsa123@gmail.com
+2015-06-16T18:36:41.660049+00:00 heroku[web.1]: State changed from up to starting
+2015-06-16T18:36:43.985773+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-06-16T18:36:44.549065+00:00 app[web.1]: [2015-06-16 18:36:44] FATAL SignalException: SIGTERM
+2015-06-16T18:36:44.549071+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2015-06-16T18:36:44.549073+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2015-06-16T18:36:44.549075+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2015-06-16T18:36:44.549076+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2015-06-16T18:36:44.549078+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/handler/webrick.rb:35:in `run'
+2015-06-16T18:36:44.549079+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/server.rb:286:in `start'
+2015-06-16T18:36:44.549081+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+2015-06-16T18:36:44.549083+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2015-06-16T18:36:44.549084+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2015-06-16T18:36:44.549086+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+2015-06-16T18:36:44.549087+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2015-06-16T18:36:44.549089+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+2015-06-16T18:36:44.549090+00:00 app[web.1]: 	bin/rails:8:in `require'
+2015-06-16T18:36:44.549092+00:00 app[web.1]: 	bin/rails:8:in `<main>'
+2015-06-16T18:36:44.549099+00:00 app[web.1]: [2015-06-16 18:36:44] INFO  going to shutdown ...
+2015-06-16T18:36:44.549120+00:00 app[web.1]: [2015-06-16 18:36:44] INFO  WEBrick::HTTPServer#start done.
+2015-06-16T18:36:44.549144+00:00 app[web.1]: Exiting
+2015-06-16T18:36:45.566007+00:00 heroku[web.1]: Process exited with status 143
+2015-06-16T18:36:46.928737+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 42384 -e production`
+2015-06-16T18:36:56.091298+00:00 app[web.1]: [2015-06-16 18:36:56] INFO  WEBrick 1.3.1
+2015-06-16T18:36:56.091323+00:00 app[web.1]: [2015-06-16 18:36:56] INFO  ruby 2.0.0 (2015-04-13) [x86_64-linux]
+2015-06-16T18:36:56.091702+00:00 app[web.1]: [2015-06-16 18:36:56] INFO  WEBrick::HTTPServer#start: pid=3 port=42384
+2015-06-16T18:36:56.334591+00:00 heroku[web.1]: State changed from starting to up
+2015-06-16T18:36:57.706951+00:00 app[web.1]: => Booting WEBrick
+2015-06-16T18:36:57.706955+00:00 app[web.1]: => Rails 4.2.1 application starting in production on http://0.0.0.0:42384
+2015-06-16T18:36:57.706957+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2015-06-16T18:36:57.706960+00:00 app[web.1]: Started HEAD "/" for 67.84.70.95 at 2015-06-16 18:36:57 +0000
+2015-06-16T18:36:57.706959+00:00 app[web.1]: => Ctrl-C to shutdown server
+2015-06-16T18:36:57.810973+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:36:57.879591+00:00 app[web.1]: Completed 200 OK in 68ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+2015-06-16T18:36:57.891302+00:00 heroku[router]: at=info method=HEAD path="/" host=limitless-sands-7127.herokuapp.com request_id=8d13b975-80bb-4316-b8e2-32a1a0f94eac fwd="67.84.70.95" dyno=web.1 connect=1ms service=184ms status=200 bytes=487
+2015-06-16T18:36:57.879216+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:36:57.971815+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 18:36:57 +0000
+2015-06-16T18:36:57.982971+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:36:57.981187+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:36:57.983226+00:00 app[web.1]: Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+2015-06-16T18:36:57.994722+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=6b423a2c-a837-4355-b8c4-74bf0831d53b fwd="67.84.70.95" dyno=web.1 connect=0ms service=21ms status=200 bytes=569
+2015-06-16T19:11:21.682681+00:00 heroku[web.1]: Idling
+2015-06-16T19:11:21.683429+00:00 heroku[web.1]: State changed from up to down
+2015-06-16T19:11:24.679995+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-06-16T19:11:25.342399+00:00 app[web.1]: [2015-06-16 19:11:25] FATAL SignalException: SIGTERM
+2015-06-16T19:11:25.342403+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2015-06-16T19:11:25.342407+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2015-06-16T19:11:25.342409+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2015-06-16T19:11:25.342410+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2015-06-16T19:11:25.342411+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/handler/webrick.rb:35:in `run'
+2015-06-16T19:11:25.342413+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/server.rb:286:in `start'
+2015-06-16T19:11:25.342415+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+2015-06-16T19:11:25.342416+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2015-06-16T19:11:25.342422+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+2015-06-16T19:11:25.342418+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2015-06-16T19:11:25.342419+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+2015-06-16T19:11:25.342520+00:00 app[web.1]: [2015-06-16 19:11:25] INFO  going to shutdown ...
+2015-06-16T19:11:25.342421+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2015-06-16T19:11:25.342722+00:00 app[web.1]: Exiting
+2015-06-16T19:11:25.342424+00:00 app[web.1]: 	bin/rails:8:in `require'
+2015-06-16T19:11:25.342425+00:00 app[web.1]: 	bin/rails:8:in `<main>'
+2015-06-16T19:11:25.342629+00:00 app[web.1]: [2015-06-16 19:11:25] INFO  WEBrick::HTTPServer#start done.
+2015-06-16T19:11:26.676110+00:00 heroku[web.1]: Process exited with status 143
+'heroku logs --tails' terminated.
+Option #03: Uses the 'source' switch to reveal log entries filtered on source type.
+2015-06-16T17:52:56.821154+00:00 heroku[router]: at=info method=GET path="/?_c9_id=livepreview2&_c9_host=https://ide.c9.io" host=limitless-sands-7127.herokuapp.com request_id=798c5fa4-dcd4-4801-9af3-e0582a9993d7 fwd="67.84.70.95" dyno=web.1 connect=1ms service=82ms status=200 bytes=480
+2015-06-16T17:54:14.242066+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=2aa70d2c-12e3-4898-a56f-2bf8015f64d1 fwd="67.84.70.95" dyno=web.1 connect=1ms service=19ms status=304 bytes=397
+2015-06-16T17:54:14.435474+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=limitless-sands-7127.herokuapp.com request_id=875659f2-8c8a-4e92-a90a-0ee65df2ff1a fwd="67.84.70.95" dyno=web.1 connect=1ms service=12ms status=200 bytes=228
+2015-06-16T17:54:15.703436+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=9ac70d8d-cab1-4ad2-8e44-e02162e162c6 fwd="67.84.70.95" dyno=web.1 connect=1ms service=36ms status=200 bytes=569
+2015-06-16T17:54:15.586635+00:00 heroku[router]: at=info method=HEAD path="/" host=limitless-sands-7127.herokuapp.com request_id=2b43b5e2-576c-41fa-bcae-457211de5fdb fwd="67.84.70.95" dyno=web.1 connect=1ms service=28ms status=200 bytes=487
+2015-06-16T18:03:14.220385+00:00 heroku[router]: at=info method=HEAD path="/" host=limitless-sands-7127.herokuapp.com request_id=f23b284a-2bb9-43f3-829b-3158c9e61209 fwd="67.84.70.95" dyno=web.1 connect=0ms service=27ms status=200 bytes=487
+2015-06-16T18:03:12.809844+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=5617241f-ac37-4a1a-9717-33bf901111b8 fwd="67.84.70.95" dyno=web.1 connect=3ms service=14ms status=304 bytes=397
+2015-06-16T18:03:12.982504+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=limitless-sands-7127.herokuapp.com request_id=ff05adfa-bce5-4432-8e98-2544a49ba5b4 fwd="67.84.70.95" dyno=web.1 connect=0ms service=5ms status=304 bytes=133
+2015-06-16T18:03:14.338955+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=7fe05bfc-f5bf-48a0-8ccd-f8641df8c7a4 fwd="67.84.70.95" dyno=web.1 connect=1ms service=35ms status=200 bytes=569
+2015-06-16T18:36:39.874394+00:00 heroku[slug-compiler]: Slug compilation started
+2015-06-16T18:36:39.874443+00:00 heroku[slug-compiler]: Slug compilation finished
+2015-06-16T18:36:39.827433+00:00 heroku[api]: Deploy cd8b16a by 123aspsa123@gmail.com
+2015-06-16T18:36:39.827488+00:00 heroku[api]: Release v6 created by 123aspsa123@gmail.com
+2015-06-16T18:36:41.660049+00:00 heroku[web.1]: State changed from up to starting
+2015-06-16T18:36:43.985773+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-06-16T18:36:45.566007+00:00 heroku[web.1]: Process exited with status 143
+2015-06-16T18:36:46.928737+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 42384 -e production`
+2015-06-16T18:36:56.334591+00:00 heroku[web.1]: State changed from starting to up
+2015-06-16T18:36:57.891302+00:00 heroku[router]: at=info method=HEAD path="/" host=limitless-sands-7127.herokuapp.com request_id=8d13b975-80bb-4316-b8e2-32a1a0f94eac fwd="67.84.70.95" dyno=web.1 connect=1ms service=184ms status=200 bytes=487
+2015-06-16T18:36:57.994722+00:00 heroku[router]: at=info method=GET path="/" host=limitless-sands-7127.herokuapp.com request_id=6b423a2c-a837-4355-b8c4-74bf0831d53b fwd="67.84.70.95" dyno=web.1 connect=0ms service=21ms status=200 bytes=569
+2015-06-16T19:11:21.682681+00:00 heroku[web.1]: Idling
+2015-06-16T19:11:21.683429+00:00 heroku[web.1]: State changed from up to down
+2015-06-16T19:11:24.679995+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-06-16T19:11:26.676110+00:00 heroku[web.1]: Process exited with status 143
+Option #04: Used the -p switch to filter Heroku logs on dynos.
+Note: Option #03 filter on the 'heroku' source type,and Option #04 filtered on the 'slug-compiler' dyno.
+2015-06-16T18:36:39.874394+00:00 heroku[slug-compiler]: Slug compilation started
+2015-06-16T18:36:39.874443+00:00 heroku[slug-compiler]: Slug compilation finished
+Option #05: Filters Heroku log on 'source' and 'dyno' types in one command execution; used 'web.1'.
+Usage: heroku logs
+
+ display recent log output
+
+ -n, --num NUM        # the number of lines to display
+ -p, --ps PS          # only display logs from the given process
+ -s, --source SOURCE  # only display logs from the given source
+ -t, --tail           # continually stream logs
+ --force-colors       # Force use of ANSI color characters (even on non-tty outputs)
+
+Example:
+
+ $ heroku logs
+ 2012-01-01T12:00:00+00:00 heroku[api]: Config add EXAMPLE by email@example.com
+ 2012-01-01T12:00:01+00:00 heroku[api]: Release v1 created by email@example.com
+
+Update to Option #05: Used 'app' for source and 'web.1' for dyno.
+2015-06-16T17:52:56.813260+00:00 app[web.1]:   Rendered text template (0.1ms)
+2015-06-16T17:52:56.814517+00:00 app[web.1]: Completed 200 OK in 12ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:14.234271+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 17:54:14 +0000
+2015-06-16T17:54:14.238918+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T17:54:14.239634+00:00 app[web.1]: Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:14.239447+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T17:54:15.563675+00:00 app[web.1]: Started HEAD "/" for 67.84.70.95 at 2015-06-16 17:54:15 +0000
+2015-06-16T17:54:15.581057+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T17:54:15.670377+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 17:54:15 +0000
+2015-06-16T17:54:15.673830+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T17:54:15.582754+00:00 app[web.1]: Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:15.672715+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T17:54:15.688056+00:00 app[web.1]: Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:15.580304+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:03:12.802401+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 18:03:12 +0000
+2015-06-16T18:03:12.807790+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:03:12.807068+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:03:12.807961+00:00 app[web.1]: Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+2015-06-16T18:03:14.203431+00:00 app[web.1]: Started HEAD "/" for 67.84.70.95 at 2015-06-16 18:03:14 +0000
+2015-06-16T18:03:14.213408+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:03:14.315326+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 18:03:14 +0000
+2015-06-16T18:03:14.337491+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:03:14.206978+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:03:14.215540+00:00 app[web.1]: Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+2015-06-16T18:03:14.336710+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:03:14.337756+00:00 app[web.1]: Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+2015-06-16T18:36:44.549065+00:00 app[web.1]: [2015-06-16 18:36:44] FATAL SignalException: SIGTERM
+2015-06-16T18:36:44.549071+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2015-06-16T18:36:44.549073+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2015-06-16T18:36:44.549075+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2015-06-16T18:36:44.549076+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2015-06-16T18:36:44.549078+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/handler/webrick.rb:35:in `run'
+2015-06-16T18:36:44.549079+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/server.rb:286:in `start'
+2015-06-16T18:36:44.549081+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+2015-06-16T18:36:44.549083+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2015-06-16T18:36:44.549084+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2015-06-16T18:36:44.549086+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+2015-06-16T18:36:44.549087+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2015-06-16T18:36:44.549089+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+2015-06-16T18:36:44.549090+00:00 app[web.1]: 	bin/rails:8:in `require'
+2015-06-16T18:36:44.549092+00:00 app[web.1]: 	bin/rails:8:in `<main>'
+2015-06-16T18:36:44.549099+00:00 app[web.1]: [2015-06-16 18:36:44] INFO  going to shutdown ...
+2015-06-16T18:36:44.549120+00:00 app[web.1]: [2015-06-16 18:36:44] INFO  WEBrick::HTTPServer#start done.
+2015-06-16T18:36:44.549144+00:00 app[web.1]: Exiting
+2015-06-16T18:36:56.091298+00:00 app[web.1]: [2015-06-16 18:36:56] INFO  WEBrick 1.3.1
+2015-06-16T18:36:56.091323+00:00 app[web.1]: [2015-06-16 18:36:56] INFO  ruby 2.0.0 (2015-04-13) [x86_64-linux]
+2015-06-16T18:36:56.091702+00:00 app[web.1]: [2015-06-16 18:36:56] INFO  WEBrick::HTTPServer#start: pid=3 port=42384
+2015-06-16T18:36:57.706951+00:00 app[web.1]: => Booting WEBrick
+2015-06-16T18:36:57.706955+00:00 app[web.1]: => Rails 4.2.1 application starting in production on http://0.0.0.0:42384
+2015-06-16T18:36:57.706957+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2015-06-16T18:36:57.706960+00:00 app[web.1]: Started HEAD "/" for 67.84.70.95 at 2015-06-16 18:36:57 +0000
+2015-06-16T18:36:57.706959+00:00 app[web.1]: => Ctrl-C to shutdown server
+2015-06-16T18:36:57.810973+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:36:57.879591+00:00 app[web.1]: Completed 200 OK in 68ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+2015-06-16T18:36:57.879216+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:36:57.971815+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 18:36:57 +0000
+2015-06-16T18:36:57.982971+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:36:57.981187+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:36:57.983226+00:00 app[web.1]: Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+2015-06-16T19:11:25.342399+00:00 app[web.1]: [2015-06-16 19:11:25] FATAL SignalException: SIGTERM
+2015-06-16T19:11:25.342403+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2015-06-16T19:11:25.342407+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2015-06-16T19:11:25.342409+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2015-06-16T19:11:25.342410+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2015-06-16T19:11:25.342411+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/handler/webrick.rb:35:in `run'
+2015-06-16T19:11:25.342413+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/server.rb:286:in `start'
+2015-06-16T19:11:25.342415+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+2015-06-16T19:11:25.342416+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2015-06-16T19:11:25.342422+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+2015-06-16T19:11:25.342418+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2015-06-16T19:11:25.342419+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+2015-06-16T19:11:25.342520+00:00 app[web.1]: [2015-06-16 19:11:25] INFO  going to shutdown ...
+2015-06-16T19:11:25.342421+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2015-06-16T19:11:25.342722+00:00 app[web.1]: Exiting
+2015-06-16T19:11:25.342424+00:00 app[web.1]: 	bin/rails:8:in `require'
+2015-06-16T19:11:25.342425+00:00 app[web.1]: 	bin/rails:8:in `<main>'
+2015-06-16T19:11:25.342629+00:00 app[web.1]: [2015-06-16 19:11:25] INFO  WEBrick::HTTPServer#start done.
+2015-06-16T17:52:56.813260+00:00 app[web.1]:   Rendered text template (0.1ms)
+2015-06-16T17:52:56.814517+00:00 app[web.1]: Completed 200 OK in 12ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:14.234271+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 17:54:14 +0000
+2015-06-16T17:54:14.238918+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T17:54:14.239634+00:00 app[web.1]: Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:14.239447+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T17:54:15.563675+00:00 app[web.1]: Started HEAD "/" for 67.84.70.95 at 2015-06-16 17:54:15 +0000
+2015-06-16T17:54:15.581057+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T17:54:15.670377+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 17:54:15 +0000
+2015-06-16T17:54:15.673830+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T17:54:15.582754+00:00 app[web.1]: Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:15.672715+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T17:54:15.688056+00:00 app[web.1]: Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+2015-06-16T17:54:15.580304+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:03:12.802401+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 18:03:12 +0000
+2015-06-16T18:03:12.807790+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:03:12.807068+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:03:12.807961+00:00 app[web.1]: Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+2015-06-16T18:03:14.203431+00:00 app[web.1]: Started HEAD "/" for 67.84.70.95 at 2015-06-16 18:03:14 +0000
+2015-06-16T18:03:14.213408+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:03:14.315326+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 18:03:14 +0000
+2015-06-16T18:03:14.337491+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:03:14.206978+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:03:14.215540+00:00 app[web.1]: Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+2015-06-16T18:03:14.336710+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:03:14.337756+00:00 app[web.1]: Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+2015-06-16T18:36:44.549065+00:00 app[web.1]: [2015-06-16 18:36:44] FATAL SignalException: SIGTERM
+2015-06-16T18:36:44.549071+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2015-06-16T18:36:44.549073+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2015-06-16T18:36:44.549075+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2015-06-16T18:36:44.549076+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2015-06-16T18:36:44.549078+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/handler/webrick.rb:35:in `run'
+2015-06-16T18:36:44.549079+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/server.rb:286:in `start'
+2015-06-16T18:36:44.549081+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+2015-06-16T18:36:44.549083+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2015-06-16T18:36:44.549084+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2015-06-16T18:36:44.549086+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+2015-06-16T18:36:44.549087+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2015-06-16T18:36:44.549089+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+2015-06-16T18:36:44.549090+00:00 app[web.1]: 	bin/rails:8:in `require'
+2015-06-16T18:36:44.549092+00:00 app[web.1]: 	bin/rails:8:in `<main>'
+2015-06-16T18:36:44.549099+00:00 app[web.1]: [2015-06-16 18:36:44] INFO  going to shutdown ...
+2015-06-16T18:36:44.549120+00:00 app[web.1]: [2015-06-16 18:36:44] INFO  WEBrick::HTTPServer#start done.
+2015-06-16T18:36:44.549144+00:00 app[web.1]: Exiting
+2015-06-16T18:36:56.091298+00:00 app[web.1]: [2015-06-16 18:36:56] INFO  WEBrick 1.3.1
+2015-06-16T18:36:56.091323+00:00 app[web.1]: [2015-06-16 18:36:56] INFO  ruby 2.0.0 (2015-04-13) [x86_64-linux]
+2015-06-16T18:36:56.091702+00:00 app[web.1]: [2015-06-16 18:36:56] INFO  WEBrick::HTTPServer#start: pid=3 port=42384
+2015-06-16T18:36:57.706951+00:00 app[web.1]: => Booting WEBrick
+2015-06-16T18:36:57.706955+00:00 app[web.1]: => Rails 4.2.1 application starting in production on http://0.0.0.0:42384
+2015-06-16T18:36:57.706957+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2015-06-16T18:36:57.706960+00:00 app[web.1]: Started HEAD "/" for 67.84.70.95 at 2015-06-16 18:36:57 +0000
+2015-06-16T18:36:57.706959+00:00 app[web.1]: => Ctrl-C to shutdown server
+2015-06-16T18:36:57.810973+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:36:57.879591+00:00 app[web.1]: Completed 200 OK in 68ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+2015-06-16T18:36:57.879216+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:36:57.971815+00:00 app[web.1]: Started GET "/" for 67.84.70.95 at 2015-06-16 18:36:57 +0000
+2015-06-16T18:36:57.982971+00:00 app[web.1]:   Rendered text template (0.0ms)
+2015-06-16T18:36:57.981187+00:00 app[web.1]: Processing by ApplicationController#hello as HTML
+2015-06-16T18:36:57.983226+00:00 app[web.1]: Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+2015-06-16T19:11:25.342399+00:00 app[web.1]: [2015-06-16 19:11:25] FATAL SignalException: SIGTERM
+2015-06-16T19:11:25.342403+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `select'
+2015-06-16T19:11:25.342407+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:170:in `block in start'
+2015-06-16T19:11:25.342409+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:32:in `start'
+2015-06-16T19:11:25.342410+00:00 app[web.1]: 	/app/vendor/ruby-2.0.0/lib/ruby/2.0.0/webrick/server.rb:160:in `start'
+2015-06-16T19:11:25.342411+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/handler/webrick.rb:35:in `run'
+2015-06-16T19:11:25.342413+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/rack-1.6.1/lib/rack/server.rb:286:in `start'
+2015-06-16T19:11:25.342415+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/server.rb:80:in `start'
+2015-06-16T19:11:25.342416+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+2015-06-16T19:11:25.342422+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands.rb:17:in `<top (required)>'
+2015-06-16T19:11:25.342418+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `tap'
+2015-06-16T19:11:25.342419+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:75:in `server'
+2015-06-16T19:11:25.342520+00:00 app[web.1]: [2015-06-16 19:11:25] INFO  going to shutdown ...
+2015-06-16T19:11:25.342421+00:00 app[web.1]: 	/app/vendor/bundle/ruby/2.0.0/gems/railties-4.2.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+2015-06-16T19:11:25.342722+00:00 app[web.1]: Exiting
+2015-06-16T19:11:25.342424+00:00 app[web.1]: 	bin/rails:8:in `require'
+2015-06-16T19:11:25.342425+00:00 app[web.1]: 	bin/rails:8:in `<main>'
+2015-06-16T19:11:25.342629+00:00 app[web.1]: [2015-06-16 19:11:25] INFO  WEBrick::HTTPServer#start done.
+End of Heroku log entry for the Bloc, Rails, Foundation, Checkpoint #08: Deploy to Heroku assignment.
